@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bobit - Premium Digital Products</title>
+    <title>Contact - Bobit</title>
     <style>
         * {
             margin: 0;
@@ -81,9 +81,9 @@
             padding: 4rem 0;
         }
 
-        .hero {
+        .contact-hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 3rem 0;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             margin: 2rem 0;
@@ -91,8 +91,8 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        .contact-hero h1 {
+            font-size: 3rem;
             margin-bottom: 1rem;
             color: #333;
             background: linear-gradient(135deg, #667eea, #764ba2);
@@ -101,68 +101,140 @@
             background-clip: text;
         }
 
-        .hero p {
+        .contact-hero p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
             color: #666;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
 
-        .cta-button {
-            display: inline-block;
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             padding: 15px 40px;
-            text-decoration: none;
+            border: none;
             border-radius: 50px;
             font-weight: bold;
             font-size: 1.1rem;
+            cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
-        .cta-button:hover {
+        .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
-
-        .feature-card {
+        .contact-info {
             background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
+            padding: 3rem;
+            border-radius: 20px;
             backdrop-filter: blur(10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
 
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: #333;
         }
 
-        .feature-card p {
+        .info-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #667eea;
+        }
+
+        .info-item p {
             color: #666;
-            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
         }
 
         /* Footer Styles */
@@ -214,16 +286,22 @@
                 gap: 1rem;
             }
 
-            .hero h1 {
+            .contact-hero h1 {
                 font-size: 2.5rem;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .features {
-                grid-template-columns: 1fr;
+            .contact-form,
+            .contact-info {
+                padding: 2rem;
+            }
+
+            .social-links {
+                justify-content: center;
             }
         }
     </style>
@@ -232,7 +310,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                     <svg baseProfile="tiny" height="100%" version="1.2" width="100%" viewBox="250 180 520 660" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
                         <path d="M 454,487 L 453,488 L 451,488 L 447,492 L 447,493 L 446,494 L 446,496 L 445,497 L 445,584 L 446,585 L 446,587 L 447,588 L 447,589 L 452,594 L 454,594 L 455,595 L 544,595 L 545,594 L 546,594 L 547,593 L 548,593 L 552,589 L 552,588 L 553,587 L 553,585 L 554,584 L 554,497 L 553,496 L 553,494 L 552,493 L 552,492 L 549,489 L 548,489 L 547,488 L 546,488 L 545,487 Z" />
                         <path d="M 481,316 L 480,317 L 478,317 L 477,318 L 476,318 L 474,320 L 474,321 L 473,322 L 473,323 L 472,324 L 472,417 L 473,418 L 473,419 L 477,423 L 478,423 L 479,424 L 575,424 L 577,422 L 578,422 L 579,421 L 579,420 L 580,419 L 580,418 L 581,417 L 581,324 L 580,323 L 580,322 L 579,321 L 579,320 L 578,319 L 577,319 L 575,317 L 572,317 L 571,316 Z" />
@@ -243,7 +321,7 @@
                 </a>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -255,29 +333,71 @@
 
     <main>
         <div class="container">
-            <section class="hero">
-                <h1>Premium Digital Products</h1>
-                <p>Transform your business with our cutting-edge digital solutions. From software tools to creative assets, we deliver excellence in every product.</p>
-                <a href="#products" class="cta-button">Explore Products</a>
+            <section class="contact-hero">
+                <h1>Get in Touch</h1>
+                <p>Have a question or want to work together? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
             </section>
 
-            <section class="features">
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>High Performance</h3>
-                    <p>Our digital products are optimized for speed and efficiency, ensuring your business operates at peak performance.</p>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Creative Excellence</h3>
-                    <p>Beautiful, professional designs that capture your brand's essence and engage your audience effectively.</p>
+
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="info-item">
+                        <h3>📧 Email</h3>
+                        <p>bobitdigital@gmail.com</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📞 Phone</h3>
+                        <p>+385 (91) 565-8461</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>📍 Address</h3>
+                        <p>Trnsko 42a<br>
+                        10020 Zagreb<br>
+                        Croatia</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>🕒 Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 4:00 PM<br>
+                        Sunday: Closed</p>
+                    </div>
+                    <!--
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">💼</a>
+                        <a href="#" class="social-link">📷</a>
+                    </div>
+                    -->
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Easy Integration</h3>
-                    <p>Seamlessly integrate our products into your existing workflow with comprehensive documentation and support.</p>
-                </div>
-            </section>
+            </div>
         </div>
     </main>
 
@@ -313,6 +433,31 @@
     </footer>
 
     <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Simple form validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Show success message (in a real application, you'd send this to a server)
+            alert('Thank you for your message! We\'ll get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -334,29 +479,6 @@
             } else {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
-        });
-
-        // Add animation to feature cards on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Initialize feature cards animation
-        document.querySelectorAll('.feature-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
         });
     </script>
 </body>
