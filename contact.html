@@ -341,7 +341,7 @@
             <div class="contact-content">
                 <div class="contact-form">
                     <h2>Send us a Message</h2>
-                    <form id="contactForm" target="_blank" action="https://formsubmit.co/bobitdigital@gmail.com" method="POST">
+                    <form id="contactForm" target="_blank" action="https://formsubmit.co/bobitdigital@gmail.com" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -360,8 +360,9 @@
                         </div>
                         <!-- Hidden fields for FormSubmit -->
                         <input type="hidden" name="_subject" value="New contact form submission from Bobit website">
-                        <input type="hidden" name="_next" value="contact.html?success=true">
+                        <input type="hidden" name="_next" value="./contact.html?success=true">
                         <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
