@@ -341,7 +341,7 @@
             <div class="contact-content">
                 <div class="contact-form">
                     <h2>Send us a Message</h2>
-                    <form id="contactForm">
+                    <form id="contactForm" target="_blank" action="https://formsubmit.co/bobitdigital@gmail.com" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -358,6 +358,10 @@
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
                         </div>
+                        <!-- Hidden fields for FormSubmit -->
+                        <input type="hidden" name="_subject" value="New contact form submission from Bobit website">
+                        <input type="hidden" name="_next" value="contact.html?success=true">
+                        <input type="hidden" name="_captcha" value="false">
                         <button type="submit" class="submit-btn">Send Message</button>
                     </form>
                 </div>
@@ -433,29 +437,25 @@
     </footer>
 
     <script>
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-            
-            // Simple form validation
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
-            
-            // Show success message (in a real application, you'd send this to a server)
+        // Check if form was successfully submitted
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            // Show success message
             alert('Thank you for your message! We\'ll get back to you soon.');
             
-            // Reset form
-            this.reset();
+            // Clear the URL parameter
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+        
+        // Form submission handler (now handles real email sending via FormSubmit)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            // Let the form submit naturally to FormSubmit
+            // FormSubmit will handle the email sending and redirect back
+            
+            // Show loading state
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
         });
 
         // Smooth scrolling for navigation links
