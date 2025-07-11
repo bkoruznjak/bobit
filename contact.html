@@ -432,12 +432,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Bobit. All rights reserved.</p>
+                <p>&copy; <span id="currentYear">2024</span> Bobit. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
         // Form submission handler (handles real email sending via FormSubmit)
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             // Let the form submit naturally to FormSubmit

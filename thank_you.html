@@ -331,12 +331,15 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Bobit. All rights reserved.</p>
+                <p>&copy; <span id="currentYear">2024</span> Bobit. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
