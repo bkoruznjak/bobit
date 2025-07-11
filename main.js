@@ -51,7 +51,7 @@ function initializeHeaderEffects() {
    ============================== */
 
 function initializeAnimations() {
-    // Add animation to feature cards on scroll
+    // Add animation to cards and containers on scroll
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -66,12 +66,29 @@ function initializeAnimations() {
         });
     }, observerOptions);
 
-    // Initialize feature cards animation
-    document.querySelectorAll('.feature-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
+    // Elements to animate
+    const elementsToAnimate = [
+        '.hero',                   // Hero sections on all pages
+        '.feature-card',           // Homepage feature cards
+        '.intro-content',          // About page intro section
+        '.what-i-do-content',      // About page what I do section
+        '.why-content',            // About page why section
+        '.value-card',             // About page value cards
+        '.about-cta',              // About page call to action
+        '.contact-hero',           // Contact page hero
+        '.contact-form',           // Contact page form
+        '.contact-info',           // Contact page info
+        '.thank-you-card'          // Thank you page card
+    ];
+
+    // Initialize animations for all elements
+    elementsToAnimate.forEach(selector => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            observer.observe(element);
+        });
     });
 }
 
