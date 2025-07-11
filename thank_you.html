@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Bobit</title>
+    <title>Thank You - Bobit</title>
     <style>
         * {
             margin: 0;
@@ -79,21 +79,31 @@
         main {
             min-height: calc(100vh - 200px);
             padding: 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .contact-hero {
+        .thank-you-card {
             text-align: center;
-            padding: 3rem 0;
+            padding: 4rem 3rem;
             background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
-            margin: 2rem 0;
             backdrop-filter: blur(10px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
         }
 
-        .contact-hero h1 {
+        .thank-you-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            color: #4CAF50;
+        }
+
+        .thank-you-card h1 {
             font-size: 3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: #333;
             background: linear-gradient(135deg, #667eea, #764ba2);
             -webkit-background-clip: text;
@@ -101,140 +111,81 @@
             background-clip: text;
         }
 
-        .contact-hero p {
+        .thank-you-card p {
             font-size: 1.2rem;
             color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 4rem 0;
-        }
-
-        .contact-form {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-form h2 {
-            font-size: 2rem;
             margin-bottom: 2rem;
-            color: #333;
+            line-height: 1.8;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #333;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .contact-info {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-info h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .info-item {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 15px;
-            border-left: 4px solid #667eea;
-        }
-
-        .info-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+        .thank-you-card .highlight {
             color: #667eea;
+            font-weight: bold;
         }
 
-        .info-item p {
-            color: #666;
-        }
-
-        .social-links {
+        .action-buttons {
             display: flex;
             gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
             margin-top: 2rem;
         }
 
-        .social-link {
+        .btn {
             display: inline-block;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            padding: 15px 30px;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
-        .social-link:hover {
-            transform: scale(1.1);
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            border: 2px solid #667eea;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(102, 126, 234, 0.1);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .response-info {
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid #4CAF50;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .response-info h3 {
+            color: #4CAF50;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .response-info p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
         }
 
         /* Footer Styles */
@@ -286,22 +237,23 @@
                 gap: 1rem;
             }
 
-            .contact-hero h1 {
+            .thank-you-card {
+                margin: 2rem 1rem;
+                padding: 3rem 2rem;
+            }
+
+            .thank-you-card h1 {
                 font-size: 2.5rem;
             }
 
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
             }
 
-            .contact-form,
-            .contact-info {
-                padding: 2rem;
-            }
-
-            .social-links {
-                justify-content: center;
+            .btn {
+                width: 100%;
+                max-width: 250px;
             }
         }
     </style>
@@ -333,74 +285,21 @@
 
     <main>
         <div class="container">
-            <section class="contact-hero">
-                <h1>Get in Touch</h1>
-                <p>Have a question or want to work together? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            </section>
-
-            <div class="contact-content">
-                <div class="contact-form">
-                    <h2>Send us a Message</h2>
-                    <form id="contactForm" target="_blank" action="https://formsubmit.co/bobitdigital@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
-                        </div>
-                        <!-- Hidden fields for FormSubmit -->
-                        <input type="hidden" name="_subject" value="New contact form submission from Bobit website">
-                        <input type="hidden" name="_next" value="https://www.bobit.hr/thank_you.html">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+            <div class="thank-you-card">
+                <div class="thank-you-icon">✅</div>
+                <h1>Thank You!</h1>
+                <p>Your message has been <span class="highlight">successfully sent</span>. We appreciate you taking the time to contact us!</p>
+                
+                <div class="response-info">
+                    <h3>📧 What happens next?</h3>
+                    <p>We've received your message and will respond within 24 hours. Our team will review your inquiry and get back to you as soon as possible.</p>
                 </div>
 
-                <div class="contact-info">
-                    <h2>Contact Information</h2>
-                    
-                    <div class="info-item">
-                        <h3>📧 Email</h3>
-                        <p>bobitdigital@gmail.com</p>
-                    </div>
+                <p>In the meantime, feel free to explore our website or connect with us on social media.</p>
 
-                    <div class="info-item">
-                        <h3>📞 Phone</h3>
-                        <p>+385 (91) 565-8461</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3>📍 Address</h3>
-                        <p>Trnsko 42a<br>
-                        10020 Zagreb<br>
-                        Croatia</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h3>🕒 Business Hours</h3>
-                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
-                        Saturday: 10:00 AM - 4:00 PM<br>
-                        Sunday: Closed</p>
-                    </div>
-                    <!--
-                    <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">🐦</a>
-                        <a href="#" class="social-link">💼</a>
-                        <a href="#" class="social-link">📷</a>
-                    </div>
-                    -->
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    <a href="contact.html" class="btn btn-secondary">Send Another Message</a>
                 </div>
             </div>
         </div>
@@ -438,17 +337,6 @@
     </footer>
 
     <script>
-        // Form submission handler (handles real email sending via FormSubmit)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            // Let the form submit naturally to FormSubmit
-            // FormSubmit will handle the email sending and redirect to thank_you.html
-            
-            // Show loading state
-            const submitBtn = this.querySelector('.submit-btn');
-            submitBtn.innerHTML = 'Sending...';
-            submitBtn.disabled = true;
-        });
-
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
