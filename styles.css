@@ -4,8 +4,8 @@
 
 :root {
     /* COLORS */
-    --brand-primary: #667eea;           /* Purple Blue - Main brand color */
-    --brand-secondary: #764ba2;        /* Deep Purple - Secondary brand color */
+    --brand-primary: #3575B9;           /* Purple Blue - Main brand color */
+    --brand-secondary: #64ABDD;        /* Deep Purple - Secondary brand color */
     --brand-gradient: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
     
     --text-primary: #333;              /* Dark Gray - Main text */
