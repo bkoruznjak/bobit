@@ -1144,11 +1144,14 @@ footer {
     transform: translateX(-50%);
     background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
     color: white;
-    padding: var(--spacing-xs) var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-lg);
     border-radius: var(--border-radius-full);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
     box-shadow: var(--shadow-medium);
+    white-space: nowrap;
+    display: inline-block;
+    min-width: fit-content;
 }
 
 .pricing-header h3 {
@@ -1195,7 +1198,7 @@ footer {
     display: inline-block;
     background: var(--brand-primary);
     color: white;
-    padding: var(--spacing-md) var(--spacing-xl);
+    padding: var(--spacing-md) var(--spacing-lg);
     border-radius: var(--border-radius-md);
     text-decoration: none;
     font-weight: var(--font-weight-bold);
