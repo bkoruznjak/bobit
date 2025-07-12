@@ -1321,13 +1321,13 @@ footer {
 .coming-soon-content h2 {
     font-size: var(--font-size-2xl);
     margin-bottom: var(--spacing-md);
-    color: var(--text-primary);
+    color: white;
     font-weight: var(--font-weight-bold);
 }
 
 .coming-soon-content > p {
     font-size: var(--font-size-large);
-    color: var(--text-secondary);
+    color: white;
     margin-bottom: var(--spacing-xl);
     max-width: 600px;
     margin-left: auto;
