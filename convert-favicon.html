@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #3575B9;
+            text-align: center;
+        }
+        .preview {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .preview img {
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: linear-gradient(135deg, #3575B9 0%, #64ABDD 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .canvas-container {
+            display: none;
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Bobit Favicon Converter</h1>
+        <p>This tool converts your SVG favicon to PNG format for better browser compatibility.</p>
+        
+        <div class="preview">
+            <h3>Preview:</h3>
+            <img id="svg-preview" src="favicon.svg" alt="SVG Favicon" width="32" height="32">
+        </div>
+        
+        <div style="text-align: center;">
+            <button onclick="convertToPNG(16)">Generate 16x16 PNG</button>
+            <button onclick="convertToPNG(32)">Generate 32x32 PNG</button>
+            <button onclick="convertToPNG(64)">Generate 64x64 PNG</button>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Instructions:</h3>
+            <ol>
+                <li>Click the buttons above to generate PNG versions</li>
+                <li>Right-click the generated images and "Save As"</li>
+                <li>Save them as:
+                    <ul>
+                        <li><code>favicon-16x16.png</code> for 16x16</li>
+                        <li><code>favicon-32x32.png</code> for 32x32</li>
+                        <li><code>favicon-64x64.png</code> for 64x64</li>
+                    </ul>
+                </li>
+                <li>Upload these files to your website root directory</li>
+            </ol>
+        </div>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function convertToPNG(size) {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            // Set canvas size
+            canvas.width = size;
+            canvas.height = size;
+            
+            img.onload = function() {
+                // Clear canvas
+                ctx.clearRect(0, 0, size, size);
+                
+                // Draw the SVG image
+                ctx.drawImage(img, 0, 0, size, size);
+                
+                // Convert to PNG and display
+                const dataURL = canvas.toDataURL('image/png');
+                displayResult(dataURL, size);
+            };
+            
+            // Load the SVG
+            img.src = 'favicon.svg';
+        }
+        
+        function displayResult(dataURL, size) {
+            const resultDiv = document.getElementById('result');
+            const imgElement = document.createElement('img');
+            imgElement.src = dataURL;
+            imgElement.alt = `Favicon ${size}x${size}`;
+            imgElement.style.border = '2px solid #3575B9';
+            imgElement.style.borderRadius = '4px';
+            imgElement.style.margin = '10px';
+            
+            const downloadLink = document.createElement('a');
+            downloadLink.href = dataURL;
+            downloadLink.download = `favicon-${size}x${size}.png`;
+            downloadLink.textContent = `Download ${size}x${size} PNG`;
+            downloadLink.style.display = 'block';
+            downloadLink.style.marginTop = '10px';
+            downloadLink.style.color = '#3575B9';
+            
+            const container = document.createElement('div');
+            container.style.textAlign = 'center';
+            container.style.marginTop = '20px';
+            container.appendChild(imgElement);
+            container.appendChild(downloadLink);
+            
+            resultDiv.innerHTML = '';
+            resultDiv.appendChild(container);
+        }
+    </script>
+</body>
+</html> 
