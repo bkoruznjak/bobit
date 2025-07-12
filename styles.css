@@ -1023,8 +1023,12 @@ footer {
 
 /* Product Visuals */
 .product-visuals {
-    padding: var(--spacing-2xl) 0;
-    background: var(--background-white);
+    margin: var(--spacing-2xl) 0;
+    background: var(--background-white-transparent);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-heavy);
 }
 
 .visuals-grid {
@@ -1222,8 +1226,12 @@ footer {
 
 /* Video Section */
 .video-section {
-    padding: var(--spacing-2xl) 0;
-    background: var(--background-white);
+    margin: var(--spacing-2xl) 0;
+    background: var(--background-white-transparent);
+    padding: var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-heavy);
 }
 
 .video-container {
@@ -1279,6 +1287,7 @@ footer {
     background: var(--brand-gradient);
     color: white;
     text-align: center;
+    border-radius: var(--border-radius-lg);
 }
 
 .cta-content h2 {
