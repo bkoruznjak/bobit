@@ -884,21 +884,25 @@ footer {
 
 /* Product Hero */
 .product-hero {
-    background: var(--brand-gradient);
-    color: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: var(--text-primary);
     padding: var(--spacing-2xl) 0;
     text-align: center;
+    margin: 0 var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-light);
 }
 
 .product-badge {
     display: inline-block;
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--brand-gradient);
+    color: white;
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--border-radius-full);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-md);
-    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-medium);
 }
 
 .hero-subtitle {
