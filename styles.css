@@ -228,7 +228,7 @@ main {
    ============================== */
 
 .products-section {
-    margin: var(--spacing-2xl) 0;
+    margin: 0 0 var(--spacing-2xl) 0;
 }
 
 .products-section h2 {
@@ -1023,7 +1023,7 @@ footer {
 
 /* Product Visuals */
 .product-visuals {
-    margin: var(--spacing-2xl) 0;
+    margin: 0 0 var(--spacing-2xl) 0;
     background: var(--background-white-transparent);
     padding: var(--spacing-xl);
     border-radius: var(--border-radius-lg);
@@ -1332,7 +1332,7 @@ footer {
 
 /* Coming Soon Section */
 .coming-soon-section {
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-2xl) 0 0 0;
     background: var(--background-accent);
 }
 
